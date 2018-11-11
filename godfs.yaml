@@ -1,0 +1,17 @@
+godfs:
+  host: localhost
+  port: 1015
+  log:
+    level: INFO
+    path: /tmp
+  http:
+    port: 8091
+    host: localhost
+  http2:
+    port: 8090
+    host: localhost
+    key-path: /Users/liujichun/workspace/godfs/cert/key.pem
+    cert-path: /Users/liujichun/workspace/godfs/cert/cert.pem
+  file:
+    storage:
+      path: ./godfs

@@ -1,0 +1,26 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+package godfs;
+
+message FUnit {
+    string name = 1; //每个文件单元的名称
+    string md5 = 2; //每个文件单元的md5
+    uint64 size = 3; //文件单元的大小
+}
+
+message Block {
+    google.protobuf.Any data = 1;
+    string location = 2; //相对位置，服务启动时进行校验并上报
+}
+
+message DFile {
+    google.protobuf.Any data = 1;
+    repeated Block blocks = 2;
+    string fsPath = 3;
+}
+
+message Resp {
+    int32 status = 1;
+    string msg = 2;
+}
+
